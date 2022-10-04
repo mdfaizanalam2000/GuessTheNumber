@@ -44,35 +44,35 @@ function check() {
         return;
     }
 
-    else {
-        guessed_nums.push(input);
-        count++;
+    guessed_nums.push(input);
+    count++;
 
-        if (count < max_trials) {
-            if (input < random) {
-                message1.textContent = "Your guess is too low!";
-                message2.textContent = "Number of trials:" + count;
-                message3.textContent = "Guessed numbers: " + guessed_nums;
-            }
-            if (input > random) {
-                message1.textContent = "Your guess is too high!";
-                message2.textContent = "Number of trials: " + count;
-                message3.textContent = "Guessed numbers: " + guessed_nums;
-            }
-            if (input == random) {
-                message1.textContent = "Congratulations, You have won!🙂";
-                message2.textContent = "You guessed it in " + count + " trials!";
-                message3.textContent = "Number was " + random;
-                message4.textContent = "Thanks for Playing!!";
-                document.getElementById("submit").disabled = true;
-            }
+    if (input == random) {
+        message1.textContent = "Congratulations, You have won!🙂";
+        message2.textContent = "You guessed it in " + count + " trials!";
+        message3.textContent = "Number was " + random;
+        message4.textContent = "Thanks for Playing!!";
+        document.getElementById("submit").disabled = true;
+    }
+
+    else if (count == max_trials) {
+        message1.textContent = "Number of trials: " + count;
+        message2.textContent = "Guessed numbers: " + guessed_nums;
+        message3.textContent = "Sorry, You have crossed trial limits!☹️";
+        message4.textContent = "The number was " + random;
+        document.getElementById("submit").disabled = true;
+    }
+
+    else {
+        if (input < random) {
+            message1.textContent = "Your guess is too low!";
+            message2.textContent = "Number of trials:" + count;
+            message3.textContent = "Guessed numbers: " + guessed_nums;
         }
-        else {
-            message1.textContent = "Number of trials: " + count;
-            message2.textContent = "Guessed numbers: " + guessed_nums;
-            message3.textContent = "Sorry, You have crossed trial limits!☹️";
-            message4.textContent = "The number was " + random;
-            document.getElementById("submit").disabled = true;
+        if (input > random) {
+            message1.textContent = "Your guess is too high!";
+            message2.textContent = "Number of trials:" + count;
+            message3.textContent = "Guessed numbers: " + guessed_nums;
         }
     }
 }
