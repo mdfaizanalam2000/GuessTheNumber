@@ -12,7 +12,7 @@ document.getElementById("submit").addEventListener("click", (e) => {
 const random = Math.floor(Math.random() * 100) + 1;
 var count = 0;
 var guessed_nums = [];
-var max_trials;
+var max_trials=10;
 
 
 function update() {
@@ -34,6 +34,7 @@ function update() {
         message3.textContent = "You have only 5 chances";
     }
 }
+
 function check() {
     let input = document.getElementById("input").value;
     input = Math.floor(input);
@@ -46,32 +47,32 @@ function check() {
     else {
         guessed_nums.push(input);
         count++;
-    }
 
-    if (count == max_trials && input != random) {
-        message1.textContent = "Number of trials: " + count;
-        message2.textContent = "Guessed numbers: " + guessed_nums;
-        message3.textContent = "Sorry, You have crossed trial limits!☹️";
-        message4.textContent = "The number was " + random;
-        document.getElementById("submit").disabled = true;
-        return;
-    }
-
-    else if (input < random) {
-        message1.textContent = "Your guess is too low!";
-        message2.textContent = "Number of trials:" + count;
-        message3.textContent = "Guessed numbers: " + guessed_nums;
-    }
-    else if (input > random) {
-        message1.textContent = "Your guess is too high!";
-        message2.textContent = "Number of trials: " + count;
-        message3.textContent = "Guessed numbers: " + guessed_nums;
-    }
-    else if (input == random) {
-        message1.textContent = "Congratulations, You have won!🙂";
-        message2.textContent = "You guessed it in " + count + " trials!";
-        message3.textContent = "Number was " +random;
-        message4.textContent = "Thanks for Playing!!";
-        document.getElementById("submit").disabled = true;
+        if (count < max_trials) {
+            if (input < random) {
+                message1.textContent = "Your guess is too low!";
+                message2.textContent = "Number of trials:" + count;
+                message3.textContent = "Guessed numbers: " + guessed_nums;
+            }
+            if (input > random) {
+                message1.textContent = "Your guess is too high!";
+                message2.textContent = "Number of trials: " + count;
+                message3.textContent = "Guessed numbers: " + guessed_nums;
+            }
+            if (input == random) {
+                message1.textContent = "Congratulations, You have won!🙂";
+                message2.textContent = "You guessed it in " + count + " trials!";
+                message3.textContent = "Number was " + random;
+                message4.textContent = "Thanks for Playing!!";
+                document.getElementById("submit").disabled = true;
+            }
+        }
+        else {
+            message1.textContent = "Number of trials: " + count;
+            message2.textContent = "Guessed numbers: " + guessed_nums;
+            message3.textContent = "Sorry, You have crossed trial limits!☹️";
+            message4.textContent = "The number was " + random;
+            document.getElementById("submit").disabled = true;
+        }
     }
 }
