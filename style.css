@@ -87,9 +87,9 @@ footer {
 
     .container {
         width: 90%;
-        height: 60vh;
+        height: 70vh;
         text-align: center;
-        padding: 10px;
+        padding: 5px;
         opacity: 100%;
         background-color: rgb(101, 98, 98);
     }
@@ -108,6 +108,6 @@ footer {
     #message2,
     #message3,
     #message4 {
-    font-size: 10px;
+        font-size: 10px;
     }
 }
