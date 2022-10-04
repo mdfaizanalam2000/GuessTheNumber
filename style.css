@@ -39,13 +39,13 @@ h4 {
 input {
     width: 40%;
     height: 5vh;
+    ouline: none;
 }
 
 button {
     width: 15%;
     height: 5vh;
-    margin-top: 10px;
-    margin-bottom: 15px;
+    margin: 5px 0;
     background-color: mediumorchid;
     border: none;
     font-weight: 800;
@@ -61,10 +61,12 @@ button {
 
 label {
     color: black;
+    font-size: 25px;
 }
 
 select {
     font-size: 20px;
+    outline: none;
 }
 
 footer {
@@ -102,6 +104,7 @@ footer {
 
     button {
         width: 15vh;
+        margin: 0;
     }
     
     #message1,
@@ -109,9 +112,5 @@ footer {
     #message3,
     #message4 {
         font-size: 15px;
-    }
-    
-    input{
-        margin:3px 0;
     }
 }
