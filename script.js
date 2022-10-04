@@ -70,7 +70,7 @@ function check() {
     else if (input == random) {
         message1.textContent = "Congratulations, You have won!🙂";
         message2.textContent = "You guessed it in " + count + " trials!";
-        message3.textContent = "Number was ", random;
+        message3.textContent = "Number was ", +random;
         message4.textContent = "Thanks for Playing!!";
         document.getElementById("submit").disabled = true;
     }
