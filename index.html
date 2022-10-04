@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Guess the Number</h1>
+    <div class="container">
+        <h3>I'm thinking of a number between 1-100</h3>
+        <h4>Can you guess it?</h4>
+        <input type="number" id="input" placeholder="Input your guess">
+        <button type="submit" id="submit">Check</button>
+        <label for="level">Choose your level</label>
+        <select name="level" id="level" onchange="update()">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+        <p id="message1">Number of trials: 0</p>
+        <p id="message2">Guessed numbers: None</p>
+        <p id="message3">You have only 10 chances</p>
+        <p id="message4"></p>
+    </div>
+    <footer>
+        Made with ❤️ by Faizan
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
