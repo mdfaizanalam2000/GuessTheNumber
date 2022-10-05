@@ -24,18 +24,24 @@ function update() {
         message3.textContent = "You have only 10 chances";
     }
 
-    else if (level == "medium") {
+    if (level == "medium") {
         max_trials = 7;
         message3.textContent = "You have only 7 chances";
     }
 
-    else if (level == "hard") {
+    if (level == "hard") {
         max_trials = 5;
         message3.textContent = "You have only 5 chances";
     }
 
     count=0;
     guessed_nums=[];
+    message1.textContent = "Number of trials: 0";
+    message2.textContent = "Guessed numbers: None";
+    message4.textContent = "Your game was reset as you have changed level!";
+    setTimeout(() => {
+        message4.textContent = "";
+    }, 2000);
 }
 
 function check() {
@@ -56,14 +62,16 @@ function check() {
         message3.textContent = "Number was " + random;
         message4.textContent = "Thanks for Playing! Kindly refresh page to play again.";
         document.getElementById("submit").disabled = true;
+        document.getElementById("level").disabled = true;
     }
 
     else if (count == max_trials) {
-        message1.textContent = "Number of trials: " + count;
-        message2.textContent = "Guessed numbers: " + guessed_nums;
-        message3.textContent = "Sorry, You have crossed trial limits!☹️ Kindly refresh Page to play again.";
-        message4.textContent = "The number was " + random;
+        message1.textContent = "Sorry, You have crossed trial limits!☹️";
+        message2.textContent = "Number of trials: " + count;
+        message3.textContent = "Guessed numbers: " + guessed_nums;
+        message4.textContent = "The number was " + random + ", Kindly refresh page to play again.";
         document.getElementById("submit").disabled = true;
+        document.getElementById("level").disabled = true;
     }
 
     else {
