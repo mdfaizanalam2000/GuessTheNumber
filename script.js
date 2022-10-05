@@ -33,6 +33,9 @@ function update() {
         max_trials = 5;
         message3.textContent = "You have only 5 chances";
     }
+
+    count=0;
+    guessed_nums=[];
 }
 
 function check() {
@@ -51,14 +54,14 @@ function check() {
         message1.textContent = "Congratulations, You have won!🙂";
         message2.textContent = "You guessed it in " + count + " trials!";
         message3.textContent = "Number was " + random;
-        message4.textContent = "Thanks for Playing!!";
+        message4.textContent = "Thanks for Playing! Kindly refresh page to play again.";
         document.getElementById("submit").disabled = true;
     }
 
     else if (count == max_trials) {
         message1.textContent = "Number of trials: " + count;
         message2.textContent = "Guessed numbers: " + guessed_nums;
-        message3.textContent = "Sorry, You have crossed trial limits!☹️";
+        message3.textContent = "Sorry, You have crossed trial limits!☹️ Kindly refresh Page to play again.";
         message4.textContent = "The number was " + random;
         document.getElementById("submit").disabled = true;
     }
